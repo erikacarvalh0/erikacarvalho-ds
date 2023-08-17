@@ -6,14 +6,17 @@
   "author": "Erika Carvalho",
   "license": "MIT",
   "workspaces": [
+    "./workspaces/svelte",
     "./workspaces/vue"
   ],
   "private": true,
   "scripts": {
     "start": "node ./handleFiles/addNew/html.js && parcel ./app/index.html",
+    "start:svelte": "yarn workspace svelte dev",
     "start:vue": "yarn workspace vue dev",
-    
+    "update-style:svelte": "yarn workspace svelte dev:update",
     "update-style:vue": "yarn workspace vue dev:update",
+    "clean:svelte": "yarn workspace svelte dev:clean",
     "clean:vue": "yarn workspace vue dev:clean"},
   "type": "module",
   "dependencies": {
