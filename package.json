@@ -8,7 +8,7 @@
   "workspaces": [],
   "private": true,
   "scripts": {
-    "start": "parcel ./app/index.html"
+    "start": "node ./handleFiles/addNew/html.js && parcel ./app/index.html"
   },
   "type": "module",
   "dependencies": {
