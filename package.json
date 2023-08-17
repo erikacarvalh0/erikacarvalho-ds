@@ -5,11 +5,16 @@
   "main": "index.js",
   "author": "Erika Carvalho",
   "license": "MIT",
-  "workspaces": [],
+  "workspaces": [
+    "./workspaces/vue"
+  ],
   "private": true,
   "scripts": {
-    "start": "node ./handleFiles/addNew/html.js && parcel ./app/index.html"
-  },
+    "start": "node ./handleFiles/addNew/html.js && parcel ./app/index.html",
+    "start:vue": "yarn workspace vue dev",
+    
+    "update-style:vue": "yarn workspace vue dev:update",
+    "clean:vue": "yarn workspace vue dev:clean"},
   "type": "module",
   "dependencies": {
     "@parcel/transformer-sass": "^2.9.3",
