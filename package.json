@@ -6,18 +6,25 @@
   "author": "Erika Carvalho",
   "license": "MIT",
   "workspaces": [
+    "./workspaces/react",
     "./workspaces/svelte",
     "./workspaces/vue"
   ],
   "private": true,
   "scripts": {
     "start": "node ./handleFiles/addNew/html.js && parcel ./app/index.html",
+    "start:react": "yarn workspace react dev",
     "start:svelte": "yarn workspace svelte dev",
     "start:vue": "yarn workspace vue dev",
+    "update-style:react": "yarn workspace react dev:update",
     "update-style:svelte": "yarn workspace svelte dev:update",
     "update-style:vue": "yarn workspace vue dev:update",
+    "update:all": "yarn workspace vue updateFiles && yarn workspace react updateFiles && yarn workspace svelte updateFiles",
+    "clean:react": "yarn workspace react dev:clean",
     "clean:svelte": "yarn workspace svelte dev:clean",
-    "clean:vue": "yarn workspace vue dev:clean"},
+    "clean:vue": "yarn workspace vue dev:clean",
+    "clean:all": "yarn workspace vue cleanFiles && yarn workspace react cleanFiles && yarn workspace svelte cleanFiles"
+  },
   "type": "module",
   "dependencies": {
     "@parcel/transformer-sass": "^2.9.3",
