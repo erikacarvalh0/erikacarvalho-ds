@@ -1,0 +1,279 @@
+// @import "../../style/reset.scss";
+
+body {
+	--pink: #FF6584;
+	--pinkLight: #EEC0CC;
+
+	--acqua: #58C9D4;
+	--acquaLight: #C4E9ED;
+
+	--grey: #3F4147;
+	--greyLight: #BABCBF;
+
+	--grey100: #F4F4F6;
+}
+
+.header {
+	display: flex;
+	justify-content: space-between;
+	margin: 20px 50px;
+
+	&__nav {
+		width: 60px;
+
+		&-icon {
+			position: relative;
+			cursor: pointer;
+
+			.header__hamburguer {
+				width: 0;
+
+				&:after,
+				&:before{
+					width: 0;
+				}
+			}
+			&:hover {
+				.header__hamburguer {
+					width: 25px;
+
+					&:after,
+					&:before{
+						width: 25px;
+					}
+				}
+			}
+		}
+	}
+
+	&__hamburguer {
+		position: absolute;
+		top: 45%;
+		left: 48%;
+		background: white;
+		height: 2px;
+		transform: translate(-50%);
+		transition: width .2s linear;
+
+		&:after,
+		&:before {
+			content: '';
+			background: white;
+			display: block;
+			width: 25px;
+			height: 2px;
+		}
+
+		&:before	{
+			transform: translateY(-6px);
+		}
+		&:after {
+			transform: translateY(4px);
+		}
+	}
+
+	&__menu {
+		box-sizing: border-box;
+		list-style: none;
+		position: fixed;
+		top: 0;
+		right: 0;
+		z-index: 100;
+		opacity: 0;
+		height: 100vh;
+		background: var(--pink);
+		margin: 0;
+		padding: 50px;
+		transform: translateX(100%);
+		transition: all .5s ease;
+
+		&.active {
+			opacity: 1;
+			transform: translateX(0);
+			transition: all .5s ease;
+		}
+		&-button {
+			cursor: pointer;
+			margin: 0 50% 30px;
+			transform: translateX(-50%);
+
+			&:hover {
+				.icon path {
+					transition: all .2s ease;
+					
+					&:first-of-type {
+						fill: var(--grey);
+					}
+
+					&:last-of-type {
+						stroke: var(--grey);
+					}
+				}
+			}
+		}
+
+		.icon {
+			position: relative;
+			display: flex;
+			justify-content: center;
+
+			&:after,
+			&:before {
+				content: '';
+				background: var(--pink);
+				display: block;
+				position: absolute;
+				top: 50%;
+				left: 50%;
+				width: 30px;
+				height: 2px;
+			}
+
+			&:after {
+				transform: translate(-50%) rotate(45deg);
+			}
+			&:before {
+				transform: translate(-50%) rotate(-45deg);
+			}
+
+			path {
+				&:first-of-type {
+					fill: var(--pinkLight);
+				}
+
+				&:last-of-type {
+					stroke: var(--pinkLight);
+				}
+			}
+		}
+
+		&-item:not(:first-of-type){
+			padding-top: 25px;
+		}
+
+		&-link {
+			cursor: pointer;
+			text-decoration: none;
+			color: white;
+			font-family: Nunito;
+			font-size: 16px;
+
+			&:after {
+				content: '';
+				background: currentColor;
+				display: block;
+				width: 0;
+				height: 2px;
+			}
+
+			&:hover {
+				font-weight: 700;
+				color: var(--grey);
+				transition: all .2s ease;
+
+				&:after {
+					width: 30%;
+					transition: width .2s ease;
+				}
+			}
+		}	
+	}
+	&__info {
+		cursor: pointer;
+		display: flex;
+		align-items: center;
+		margin-top: 25px;
+		gap: 5px;
+		color: var(--pinkLight);
+
+		&:hover {
+			color: white;
+		}
+
+		span {
+			width: 12px;
+			border: 1px solid var(--pinkLight);
+			border-radius: 50%;
+			padding: 3px;
+			font-size: 12px;
+		}
+	}
+}
+
+.modal__info {
+	position: relative;
+	border: 0;
+	box-shadow: 5px 7px 12px var(--grey);
+	padding: 20px 30px;
+
+	&::backdrop {
+		background: rgba(0, 0, 0, .7);
+	}
+
+	.modal {
+		&__title {
+			font-family: 'Josefin Sans', sans-serif;
+			color: var(--grey);
+			font-size: 24px;
+			font-weight: 700;
+			text-transform: uppercase;
+		}
+
+		&__close {
+			cursor: pointer;
+			position: absolute;
+			top: 20px;
+			right: 20px;
+		}
+
+		&__text {
+			display: flex;
+			gap: 5px;
+			align-items: center;
+			font-size: 14px;
+
+			&:before {
+				content: '';
+				display: block;
+				width: 4px ;
+				height: 4px;
+				background: var(--acqua);
+			}
+
+			strong {
+				font-weight: 700;
+				margin-right: 5px;
+			}
+
+			a {
+				text-decoration: none;
+				color: var(--pink);
+
+				&:not(:first-of-type) {
+					border-left: 1px solid var(--grey);
+					margin-left: 3px;
+					padding-left: 8px;
+				}
+				
+				&:after {
+					content: '';
+					background: currentColor;
+					display: block;
+					width: 0;
+					height: 2px;
+				}
+
+				&:hover {
+					font-weight: 700;
+					color: var(--grey);
+					transition: all .2s ease;
+
+					&:after {
+						width: 30%;
+						transition: width .2s ease;
+					}
+				}
+			}
+		}
+	}
+}

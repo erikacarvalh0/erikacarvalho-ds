@@ -1,0 +1,34 @@
+@import "../style/reset.scss";
+
+body {
+	--grey: #3F4147;
+	overflow-x: hidden;
+}
+
+.go-back {
+	position: absolute;
+	top: 50%;
+	right: 0;
+	display: flex;
+	align-items: center;
+	gap: 5px;
+	transform: translate(110px);
+	background: var(--grey);
+	color: white;
+	padding: 12px;
+	font-family: "Nunito", sans-serif;
+	font-size: 16px;
+	text-decoration: none;
+	transition: transform .3s ease-in;
+	border-radius: 4px 0 0 4px;
+	box-shadow: 5px 5px 5px rgba(0, 0, 0, .1);
+
+	.icon {
+		width: 24px;
+	}
+
+	&:hover {
+		transform: translate(0);
+		transition: transform .3s ease-in;
+	}
+}

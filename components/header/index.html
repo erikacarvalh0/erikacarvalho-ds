@@ -1,15 +1,15 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Erika Carvalho DS - HTML</title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="./components/header/index.scss"/>
-  <link rel="stylesheet" href="./index.scss"/>
+	<meta charset="utf-8">
+	<title>Erika Carvalho DS - carousel</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="./index.scss">
 </head>
 <body>
-	<header data-component="" class="header">
+	<main>
+		<header data-component class="header">
 			<a href="https://erikacarvalho.dev">
 				<img class="header__image" src="images/icons/logo.svg" />
 			</a>
@@ -46,7 +46,7 @@
 				</ul>
 		
 				<dialog data-js="infoModal" class="modal__info">
-					<button class="modal__close" data-js="hideInfo"> X</button>
+					<button  class="modal__close" data-js="hideInfo"> X</button>
 					<header class="modal__header">
 						<h2 class="modal__title"> About this project</h2>
 					</header>
@@ -56,38 +56,21 @@
 							<strong>Objetivo técnico:</strong>
 							Treinar manipulação de SVG com animações CSS.
 						
-						</p><p class="modal__text">
+						<p class="modal__text">
 							<strong>Stack utilizada:</strong>
 							Pug/Jade, Stylus, JS vanilla
 						
-						</p><p class="modal__text">
+						<p class="modal__text">
 							<strong>Tempo para desenvolvimento v1:</strong>
 							Aproximadamente 18h
 						
-						</p><p class="modal__text">
+						<p class="modal__text">
 							<strong>Repositório:</strong>
 							<a href="https://github.com/erikacarvalh0/badges-display" target="_blank"> Github</a>
-					</p></section>	
+					</section>	
 				</dialog>
-		</nav></header>
-  <main>
-		<h1 class="title">All components</h1>
-		<p>This is the homepage of the ECDS. It contains a list with the links for all avaible components.</p>
-    <nav>
-      <ul data-links>
-
-		<li>
-			<a href="/components/button/index.html">button</a>
-		</li>
-		<li>
-			<a href="/components/header/index.html">header</a>
-		</li>
-		<li>
-			<a href="/components/img/index.html">img</a>
-		</li>
-</ul>
-    </nav>
-  </main>
-<script type="text/javascript" src="./components/header/index.js" ></script>
+		</header>
+	</main>
+			
 </body>
 </html>

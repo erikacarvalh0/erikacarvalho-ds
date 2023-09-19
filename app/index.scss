@@ -1,0 +1,54 @@
+@import "../style/reset.scss";
+
+body {
+	font-family: 'Nunito', sans-serif;
+	font-size: 16px;
+}
+
+main {
+	margin: 50px;
+	p {
+		font-family: 'Nunito', sans-serif;
+		font-size: 16px;
+		color: var(--grey);
+		margin: 8px 0;
+	}
+}
+
+.title {
+	font-size: 32px;
+	color: var(--grey);
+	text-transform: uppercase;
+	font-family: 'Josefin Sans', sans-serif;
+}
+
+[data-links] {
+	display: flex;
+	gap: 10px;
+	margin-top: 32px;
+
+	a {
+		display: block;
+		flex-wrap: wrap;
+		background: var(--pink);
+		background: linear-gradient(135deg, white 18px, var(--pink) 18px, var(--pink) 20px, white 20px, white 22px, var(--pink) 22px) top left,
+		linear-gradient(180deg, white 0, var(--pink) 0, var(--pink) 2px, white 2px, white 4px, var(--pink) 4px) top left,
+		linear-gradient(-135deg, white 18px, var(--pink) 18px, var(--pink) 20px, white 20px, white 22px, var(--pink) 22px) top right,
+		linear-gradient(180deg, white 0, var(--pink) 0, var(--pink) 2px, white 2px, white 4px, var(--pink) 4px) top right,
+		linear-gradient(-45deg, white 18px, var(--pink) 18px, var(--pink) 20px, white 20px, white 22px, var(--pink) 22px) bottom right,
+		linear-gradient(45deg, white 18px, var(--pink) 18px, var(--pink) 20px, white 20px, rgba(255,255,255,1) 22px, var(--pink) 22px) bottom left;
+		background-size: 50% 50%;
+		background-repeat: no-repeat;
+		
+		padding: .5em 1.2em;
+		width: 110px;
+		text-align: center;
+		color: white;
+		text-decoration: none;
+		transition: all .3s ease-in;
+
+		&:hover {
+			
+		}
+	}
+}

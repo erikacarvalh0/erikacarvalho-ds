@@ -1,5 +1,4 @@
 import fs from "fs"
-import fse from 'fs-extra'
 
 import { camelCapitalized } from "../utils/camelCapitalized.js"
 import { srcPath } from "../constants/templates.js"
@@ -14,21 +13,6 @@ export const componentStructure = (component, content) => {
 	export default ${camelCapitalized(component)};`
 
 }
-
-// export const style = (componentClasses) => {
-// 	if (typeof componentClasses === 'object') {
-// 		return componentClasses.reduce((all, className) => {
-// 			return `${all}
-// .${className} {
-// 	composes: ${className} from './raw/index.css';
-// }`
-// 		}, '')
-// 	}
-
-// 	return `.${componentClasses} {
-// 		composes: ${componentClasses} from './raw/index.css';
-// 	}`
-// }
 
 export const app = (components) => {
 
@@ -52,10 +36,12 @@ import ${camelCapitalized(component)} from "./components/${component}";`, ``)
 
 
 export const createStyle = (component) => {
+	if (!fs.existsSync(`${srcPath}${component}/raw`)){
+		fs.mkdirSync(`${srcPath}${component}/raw`)
+	}
 
-	fs.mkdirSync(`${srcPath}${component}/raw`)
-	fse.copySync(`../../components/${component}/index.scss`, `${srcPath}${component}/raw/index.scss`, { overwrite: false })
-
+	const css = fs.readFileSync(`../../components/${component}/index.scss`, "utf8")
+	fs.writeFileSync(`./${srcPath}${component}/raw/index.scss`, css, "utf8")
 }
 
 export const createComponent = (component, componentContent) => {

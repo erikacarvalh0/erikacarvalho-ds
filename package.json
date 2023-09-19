@@ -12,6 +12,7 @@
   ],
   "private": true,
   "scripts": {
+    "component": "node ./handleFiles/addNew/blank-html.js",
     "start": "node ./handleFiles/addNew/html.js && parcel ./app/index.html",
     "start:react": "yarn workspace react dev",
     "start:svelte": "yarn workspace svelte dev",
@@ -29,6 +30,8 @@
   "dependencies": {
     "@parcel/transformer-sass": "^2.9.3",
     "fs-extra": "^11.1.1",
-    "parcel-bundler": "^1.12.5"
+    "jsdom": "^22.1.0",
+    "parcel-bundler": "^1.12.5",
+    "yargs": "^17.7.2"
   }
 }
