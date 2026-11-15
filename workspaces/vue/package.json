@@ -1,0 +1,23 @@
+{
+  "name": "vue",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "syncFiles": "node ../../handleFiles/addNew/vue.js",
+    "dev": "yarn syncFiles && vite",
+    "updateFiles": "node ../../handleFiles/update/vue.js",
+    "dev:update": "yarn updateFiles && vite",
+    "cleanFiles": "node ../../handleFiles/clean/vue.js",
+    "dev:clean": "yarn cleanFiles && vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "vue": "^3.3.4"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^4.2.3",
+    "vite": "^4.4.5"
+  }
+}
