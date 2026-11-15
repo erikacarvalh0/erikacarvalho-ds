@@ -9,14 +9,15 @@
       "types": "./dist/index.d.ts",
       "import": "./dist/index.js"
     },
-    "./styles.css": "./dist/style.css"
+    "./styles.css": "./dist/index.css"
   },
   "files": [
     "dist"
   ],
   "scripts": {
     "build": "vite build && tsc -p tsconfig.build.json",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "prepack": "npm run build"
   },
   "peerDependencies": {
     "react": "^18.2.0 || ^19.0.0",
@@ -28,5 +29,19 @@
     "vite": "^6.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"
+  },
+  "description": "Reusable React components from Erika Carvalho Design System",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/erikacarvalh0/erikacarvalho-ds.git",
+    "directory": "packages/react"
+  },
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
   }
 }
