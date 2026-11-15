@@ -1,0 +1,22 @@
+name: React library CI
+on:
+  push:
+    branches: [main]
+  pull_request:
+jobs:
+  react-library:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install library dependencies
+        working-directory: packages/react
+        run: npm install --no-audit --no-fund
+      - name: Typecheck
+        working-directory: packages/react
+        run: npm run typecheck
+      - name: Build
+        working-directory: packages/react
+        run: npm run build

@@ -8,7 +8,8 @@
   "workspaces": [
     "./workspaces/react",
     "./workspaces/svelte",
-    "./workspaces/vue"
+    "./workspaces/vue",
+    "./packages/react"
   ],
   "private": true,
   "scripts": {
@@ -24,7 +25,9 @@
     "clean:react": "yarn workspace react dev:clean",
     "clean:svelte": "yarn workspace svelte dev:clean",
     "clean:vue": "yarn workspace vue dev:clean",
-    "clean:all": "yarn workspace vue cleanFiles && yarn workspace react cleanFiles && yarn workspace svelte cleanFiles"
+    "clean:all": "yarn workspace vue cleanFiles && yarn workspace react cleanFiles && yarn workspace svelte cleanFiles",
+    "build:react-library": "yarn workspace @erikacarvalho/react build",
+    "typecheck:react-library": "yarn workspace @erikacarvalho/react typecheck"
   },
   "type": "module",
   "dependencies": {
