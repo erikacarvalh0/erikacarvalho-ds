@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Erika Carvalho DS - carousel</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="./index.scss">
+</head>
+<body>
+	<main>
+		<header data-component class="header">
+			<a href="https://erikacarvalho.dev">
+				<img class="header__image" src="images/icons/logo.svg" />
+			</a>
+		
+			<nav class="header__nav">
+				<div class="header__nav-icon">
+					<img data-js="menubtn" class="header__image" src="images/icons/menu.svg" />
+					
+					<div class="header__hamburguer"></div>
+				</div>
+				
+				<ul data-js="menu" class="header__menu">
+					<button data-js="closeMenu" class="header__menu-button">
+						<img data-js="menubtn" class="header__image" src="images/icons/menu.svg" />
+					</button>
+					<li class="header__menu-item">
+						<a class="header__menu-link" href="https://erikacarvalho.dev"> Home</a>
+					</li>
+					<li class="header__menu-item">
+						<a class="header__menu-link" href="https://erikacarvalho.dev/about"> Sobre</a>
+					</li>
+					<li class="header__menu-item">
+						<a class="header__menu-link" href="https://erikacarvalh0.github.io/badges-display/"> Painel de Conquistas</a>
+					</li>
+					<li class="header__menu-item">
+						<a class="header__menu-link" href="https://github.com/erikacarvalh0/cv-generator-cli"> CV Generator CLI</a>
+					</li>
+					<button class="header__info" data-js="showInfo"> 
+						<span>
+							i
+						</span> 
+							About this project 
+					</button>
+				</ul>
+		
+				<dialog data-js="infoModal" class="modal__info">
+					<button  class="modal__close" data-js="hideInfo"> X</button>
+					<header class="modal__header">
+						<h2 class="modal__title"> About this project</h2>
+					</header>
+		
+					<section class="modal__body">
+						<p class="modal__text">
+							<strong>Objetivo técnico:</strong>
+							Treinar manipulação de SVG com animações CSS.
+						
+						<p class="modal__text">
+							<strong>Stack utilizada:</strong>
+							Pug/Jade, Stylus, JS vanilla
+						
+						<p class="modal__text">
+							<strong>Tempo para desenvolvimento v1:</strong>
+							Aproximadamente 18h
+						
+						<p class="modal__text">
+							<strong>Repositório:</strong>
+							<a href="https://github.com/erikacarvalh0/badges-display" target="_blank"> Github</a>
+					</section>	
+				</dialog>
+		</header>
+	</main>
+			
+</body>
+</html>
